@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TP 2</title>
+    </head>
+    <body>
+        <div>
+            <span id="suma">
+                <h1>Suma sin "+"</h1>
+                <div>
+                    <input type="number" name="suma_p" id="prim_suma" placeholder="Ingresar primer numero..." required>
+                    <input type="number" name="suma_s" id="sec_suma" placeholder="Ingresar segundo numero..." required>
+                    <button id="suma_solve">Realizar Cuenta</button>
+                </div>
+                <h2>El resultado es: <span id="res_suma"></span></h2>
+                <hr>
+            </span>
+            <span id="mult">
+                <h1>Multiplicacion sin "*"</h1>
+                <div>
+                    <input type="number" name="mult_p" id="prim_mult" placeholder="Ingresar primer numero..." required>
+                    <input type="number" name="mult_s" id="sec_mult" placeholder="Ingresar segundo numero..." required>
+                    <button id="mult_solve">Realizar Cuenta</button>
+                </div>
+                <h2>El resultado es: <span id="res_mult"></span></h2>
+                <hr>
+            </span>
+            <span id="pot">
+                <h1>Potencia sin "**"</h1>
+                <div>
+                    <input type="number" name="pot_p" id="prim_pot" placeholder="Ingresar primer numero..." required>
+                    <input type="number" name="pot_s" id="sec_pot" placeholder="Ingresar segundo numero..." required>
+                    <button id="pot_solve">Realizar Cuenta</button>
+                </div>
+                <h2>El resultado es: <span id="res_pot"></span></h2>
+            </span>
+        </div>
+        <script>
+            const multip = document.getElementById("mult_solve");
+
+
+            multip.addEventListener("click", mult);
+
+            function mult(e) {
+                let p_num = document.getElementById("prim_mult").value;
+                let s_num = document.getElementById("sec_mult").value;
+                let total = 0;
+                const show_res = document.getElementById("res_mult");
+
+                for (let i = 0; i < s_num; i++) {
+                    total += Number(p_num);
+                }
+
+                show_res.innerHTML = total;
+            }
+        </script>
+    </body>
+</html>
